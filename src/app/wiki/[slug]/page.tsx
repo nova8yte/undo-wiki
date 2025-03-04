@@ -9,6 +9,7 @@ interface WikiPageProps {
   params: {
     slug: string;
   };
+  searchParams: Record<string, string | string[] | undefined>;
 }
 
 export async function generateStaticParams() {
@@ -33,7 +34,10 @@ export async function generateStaticParams() {
   }
 }
 
-export default async function WikiPage({ params }: WikiPageProps) {
+export default async function WikiPage({ 
+  params,
+  searchParams 
+}: WikiPageProps) {
   const { slug } = params;
   const filePath = path.join(process.cwd(), 'content/articles', `${slug}.md`);
   

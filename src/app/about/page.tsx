@@ -12,7 +12,7 @@ export default function About() {
           <p className="mb-4">
             <span className="text-mulberry-600">undo</span><span className="text-gray-800">.wiki</span> was created with a simple mission: to build a comprehensive knowledge base 
             dedicated to undoing things. In a world where mistakes happen and actions need to be reversed, 
-            having reliable information on how to "undo" various processes can be invaluable.
+            having reliable information on how to &quot;undo&quot; various processes can be invaluable.
           </p>
           <p>
             Through collaborative effort, we're building a specialized wiki that focuses exclusively on the 

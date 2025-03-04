@@ -11,18 +11,18 @@ export default function Contribute() {
           <h2 className="text-2xl font-semibold mb-4 text-mulberry-700">Contribution Process</h2>
           <p className="mb-4">
             <span className="text-mulberry-600">undo</span><span className="text-gray-800">.wiki</span> uses GitHub for content management. This allows us to have a transparent
-            review process and maintain version history of all wiki pages. Here's how to contribute:
+            review process and maintain version history of all wiki pages. Here&apos;s how to contribute:
           </p>
           
           <div className="rounded bg-gray-50 p-4 mb-6">
             <h3 className="font-medium text-lg mb-2">For Non-Technical Contributors</h3>
             <p className="mb-2">
-              If you're not familiar with GitHub or Markdown, you can still contribute by:
+              If you&apos;re not familiar with GitHub or Markdown, you can still contribute by:
             </p>
             <ol className="list-decimal list-inside space-y-2">
-              <li>Creating a GitHub account (if you don't have one)</li>
+              <li>Creating a GitHub account (if you don&apos;t have one)</li>
               <li>Navigating to our repository</li>
-              <li>Using GitHub's web editor to create or edit files</li>
+              <li>Using GitHub&apos;s web editor to create or edit files</li>
               <li>Submitting your changes as a pull request</li>
             </ol>
           </div>

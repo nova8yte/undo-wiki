@@ -27,7 +27,7 @@ export default function RotatingTagline() {
     }, 4000); // Change every 4 seconds
     
     return () => clearInterval(interval);
-  }, []);
+  }, [taglines.length]); // Add taglines.length as dependency
 
   return (
     <p className={`text-xl text-gray-600 transition-opacity duration-500 ${fadeState === 'fade-out' ? 'opacity-0' : 'opacity-100'}`}>

@@ -1,8 +1,9 @@
 import fs from 'fs';
 import path from 'path';
+import Link from 'next/link';
 import Layout from '../../../components/Layout';
 import WikiArticle from '../../../components/WikiArticle';
-import { getMarkdownFiles, readMarkdownFile } from '../../../utils/markdown';
+import { getMarkdownFiles } from '../../../utils/markdown';
 
 interface WikiPageProps {
   params: {
@@ -47,6 +48,7 @@ export default async function WikiPage({ params }: WikiPageProps) {
       content = '# Article Not Found\n\nThe requested article could not be found. It may have been moved or deleted.';
     }
   } catch (error) {
+    console.error('Error loading article:', error);
     notFound = true;
     content = '# Error Loading Article\n\nThere was an error loading this article. Please try again later.';
   }
@@ -71,7 +73,7 @@ export default async function WikiPage({ params }: WikiPageProps) {
                 Edit this page
               </a>
               
-              <a 
+              <Link 
                 href="/wiki" 
                 className="text-mulberry-600 hover:text-mulberry-700 hover:underline flex items-center"
               >
@@ -79,7 +81,7 @@ export default async function WikiPage({ params }: WikiPageProps) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
                 All Articles
-              </a>
+              </Link>
             </div>
           </div>
         )}
@@ -87,7 +89,7 @@ export default async function WikiPage({ params }: WikiPageProps) {
         {notFound && (
           <div className="mt-8 pt-6 border-t border-gray-200">
             <div className="flex justify-center">
-              <a 
+              <Link 
                 href="/wiki" 
                 className="text-mulberry-600 hover:text-mulberry-700 hover:underline flex items-center"
               >
@@ -95,7 +97,7 @@ export default async function WikiPage({ params }: WikiPageProps) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
                 Browse All Articles
-              </a>
+              </Link>
             </div>
           </div>
         )}

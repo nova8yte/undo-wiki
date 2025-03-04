@@ -16,37 +16,26 @@ const WikiArticle: React.FC<WikiArticleProps> = ({ content, title }) => {
       <div className="prose prose-mulberry max-w-none">
         <ReactMarkdown
           components={{
-            // @ts-ignore
             h1: ({ node, ...props }) => <h1 className="text-3xl font-bold mt-8 mb-4 text-mulberry-800" {...props} />,
-            // @ts-ignore
             h2: ({ node, ...props }) => <h2 className="text-2xl font-semibold mt-6 mb-3 text-mulberry-700" {...props} />,
-            // @ts-ignore
             h3: ({ node, ...props }) => <h3 className="text-xl font-medium mt-5 mb-2 text-mulberry-600" {...props} />,
-            // @ts-ignore
             h4: ({ node, ...props }) => <h4 className="text-lg font-medium mt-4 mb-2 text-gray-800" {...props} />,
-            // @ts-ignore
             p: ({ node, ...props }) => <p className="my-3 text-gray-700" {...props} />,
-            // @ts-ignore
             ul: ({ node, ...props }) => <ul className="list-disc pl-6 my-3 text-gray-700" {...props} />,
-            // @ts-ignore
             ol: ({ node, ...props }) => <ol className="list-decimal pl-6 my-3 text-gray-700" {...props} />,
-            // @ts-ignore
             li: ({ node, ...props }) => <li className="my-1" {...props} />,
-            // @ts-ignore
             a: ({ node, ...props }) => (
               <a className="text-mulberry-600 hover:underline" {...props} />
             ),
-            // @ts-ignore
             blockquote: ({ node, ...props }) => (
               <blockquote className="border-l-4 border-gray-300 pl-4 italic my-4" {...props} />
             ),
-            // @ts-ignore
-            code: ({ node, inline, className, children, ...props }) => {
+            // Using type assertion for ReactMarkdown custom components
+            code: ({ node, inline, className, children, ...props }: any) => {
               const match = /language-(\w+)/.exec(className || '');
               return !inline && match ? (
                 <SyntaxHighlighter
-                  // @ts-ignore
-                  style={tomorrow}
+                  style={tomorrow as any}
                   language={match[1]}
                   PreTag="div"
                   className="rounded my-4"
@@ -63,23 +52,18 @@ const WikiArticle: React.FC<WikiArticleProps> = ({ content, title }) => {
                 </code>
               );
             },
-            // @ts-ignore
             table: ({ node, ...props }) => (
               <div className="overflow-x-auto my-4">
                 <table className="min-w-full border border-gray-300" {...props} />
               </div>
             ),
-            // @ts-ignore
             thead: ({ node, ...props }) => <thead className="bg-gray-100" {...props} />,
-            // @ts-ignore
             th: ({ node, ...props }) => (
               <th className="border border-gray-300 px-4 py-2 text-left" {...props} />
             ),
-            // @ts-ignore
             td: ({ node, ...props }) => (
               <td className="border border-gray-300 px-4 py-2" {...props} />
             ),
-            // @ts-ignore
             hr: ({ node, ...props }) => <hr className="my-6 border-t border-gray-300" {...props} />,
           }}
         >

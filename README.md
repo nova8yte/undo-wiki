@@ -60,6 +60,6 @@ The site is automatically deployed to GitHub Pages when changes are pushed to th
 
 ## License
 
-The source code and infrastructure of this project are licensed under the MIT License. See [LICENSE.txt](LICENSE.txt) for details.
+The source code and infrastructure of this project are licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 Content is licensed separately under CC BY-SA 4.0 as noted above.

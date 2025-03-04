@@ -1,4 +1,4 @@
-# Undo.Wiki
+# undo.wiki
 
 A community-driven Wikipedia-style site focused on undoing things. This platform allows users to create and share knowledge about reversing actions, fixing mistakes, and undoing various processes.
 

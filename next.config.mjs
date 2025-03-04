@@ -3,12 +3,9 @@
  */
 const nextConfig = {
   output: 'export',
-  basePath: '',
-  images: {
-    unoptimized: true,
-  },
-  
-  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://undo.wiki' : '',
+  basePath: isGithubPages ? '/undowiki' : '',
+  assetPrefix: isProd ? 'https://undo.wiki' : (isGithubPages ? '/undowiki' : ''),
+  images: { unoptimized: true },
 };
 
 export default nextConfig; 
